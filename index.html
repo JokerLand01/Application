@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#6aaa64" />
+  <title>Streakle — A new word puzzle every day</title>
+  <meta name="description" content="Streakle is a free daily word puzzle. One new word every day — guess it in six tries, build your streak, and share your score." />
+
+  <!-- Open Graph / social share cards: makes shared links look great = more click-throughs -->
+  <meta property="og:title" content="Streakle — A new word puzzle every day" />
+  <meta property="og:description" content="Can you solve today's word in six guesses? Build your streak and challenge your friends." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ===================================================================
+       MONETIZATION: Google AdSense.
+       1. Sign up at https://adsense.google.com and get your publisher ID.
+       2. Uncomment the script below and replace ca-pub-XXXXXXXXXXXXXXXX.
+       3. Place <ins class="adsbygoogle"> units in the .ad-slot containers.
+       ===================================================================
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="helpBtn" aria-label="How to play" title="How to play">?</button>
+    <h1 class="brand">STREAKLE</h1>
+    <div class="topbar-right">
+      <button class="icon-btn" id="statsBtn" aria-label="Statistics" title="Statistics">📊</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- Top ad slot -->
+  <div class="ad-slot ad-top" aria-hidden="true"><span>Ad space</span></div>
+
+  <main>
+    <div id="board" class="board" aria-label="Game board"></div>
+  </main>
+
+  <!-- Bottom ad slot -->
+  <div class="ad-slot ad-bottom" aria-hidden="true"><span>Ad space</span></div>
+
+  <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
+
+  <!-- Toast for transient messages -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============ How to play modal ============ -->
+  <div class="modal-backdrop" id="helpModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <button class="modal-close" data-close="helpModal" aria-label="Close">×</button>
+      <h2 id="helpTitle">How to play</h2>
+      <p>Guess the <strong>STREAKLE</strong> in 6 tries.</p>
+      <ul class="rules">
+        <li>Each guess must be a valid 5-letter word.</li>
+        <li>The color of the tiles shows how close your guess was.</li>
+      </ul>
+      <div class="examples">
+        <div class="ex-row">
+          <span class="tile correct sm">W</span><span class="tile sm">E</span><span class="tile sm">A</span><span class="tile sm">R</span><span class="tile sm">Y</span>
+        </div>
+        <p><strong>W</strong> is in the word and in the correct spot.</p>
+        <div class="ex-row">
+          <span class="tile sm">P</span><span class="tile present sm">I</span><span class="tile sm">L</span><span class="tile sm">O</span><span class="tile sm">T</span>
+        </div>
+        <p><strong>I</strong> is in the word but in the wrong spot.</p>
+        <div class="ex-row">
+          <span class="tile sm">V</span><span class="tile sm">A</span><span class="tile sm">G</span><span class="tile absent sm">U</span><span class="tile sm">E</span>
+        </div>
+        <p><strong>U</strong> is not in the word in any spot.</p>
+      </div>
+      <p class="muted">A new puzzle is released every day. Keep your streak alive!</p>
+    </div>
+  </div>
+
+  <!-- ============ Stats modal ============ -->
+  <div class="modal-backdrop" id="statsModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="statsTitle">
+      <button class="modal-close" data-close="statsModal" aria-label="Close">×</button>
+      <h2 id="statsTitle">Statistics</h2>
+      <div class="stats-grid">
+        <div><span class="stat-num" id="statPlayed">0</span><span class="stat-label">Played</span></div>
+        <div><span class="stat-num" id="statWinPct">0</span><span class="stat-label">Win %</span></div>
+        <div><span class="stat-num" id="statStreak">0</span><span class="stat-label">Current<br>Streak</span></div>
+        <div><span class="stat-num" id="statMaxStreak">0</span><span class="stat-label">Max<br>Streak</span></div>
+      </div>
+      <h3>Guess distribution</h3>
+      <div class="dist" id="distChart"></div>
+
+      <div class="result-actions">
+        <div class="countdown-wrap">
+          <span class="muted">Next Streakle</span>
+          <span class="countdown" id="countdown">--:--:--</span>
+        </div>
+        <button class="share-btn" id="shareBtn">Share <span aria-hidden="true">↗</span></button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Made with ♥ &middot; <a href="#" id="footerHelp">How to play</a> &middot; A new word daily</p>
+  </footer>
+
+  <script src="words.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

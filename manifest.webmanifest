@@ -1,0 +1,18 @@
+{
+  "name": "Streakle — Daily Word Puzzle",
+  "short_name": "Streakle",
+  "description": "A new word puzzle every day. Guess it in six tries and build your streak.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#6aaa64",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
