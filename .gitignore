@@ -1,0 +1,4 @@
+# Build-time only (used to generate the share image); not needed to run the site.
+node_modules/
+package.json
+package-lock.json

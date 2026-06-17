@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jokerland01.github.io/Application/sitemap.xml

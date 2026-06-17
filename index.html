@@ -6,12 +6,20 @@
   <meta name="theme-color" content="#6aaa64" />
   <title>Streakle — A new word puzzle every day</title>
   <meta name="description" content="Streakle is a free daily word puzzle. One new word every day — guess it in six tries, build your streak, and share your score." />
+  <link rel="canonical" href="https://jokerland01.github.io/Application/" />
 
   <!-- Open Graph / social share cards: makes shared links look great = more click-throughs -->
   <meta property="og:title" content="Streakle — A new word puzzle every day" />
   <meta property="og:description" content="Can you solve today's word in six guesses? Build your streak and challenge your friends." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jokerland01.github.io/Application/" />
+  <meta property="og:image" content="https://jokerland01.github.io/Application/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Streakle — A new word puzzle every day" />
+  <meta name="twitter:description" content="Can you solve today's word in six guesses? Build your streak and challenge your friends." />
+  <meta name="twitter:image" content="https://jokerland01.github.io/Application/assets/og-image.png" />
 
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
@@ -36,15 +44,27 @@
     </div>
   </header>
 
-  <!-- Top ad slot -->
-  <div class="ad-slot ad-top" aria-hidden="true"><span>Ad space</span></div>
+  <!-- Top ad slot. Once AdSense is approved: uncomment the <ins> unit and remove the placeholder <span>. -->
+  <div class="ad-slot ad-top"><span>Ad space</span>
+    <!--
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
 
   <main>
     <div id="board" class="board" aria-label="Game board"></div>
   </main>
 
-  <!-- Bottom ad slot -->
-  <div class="ad-slot ad-bottom" aria-hidden="true"><span>Ad space</span></div>
+  <!-- Bottom ad slot. Once AdSense is approved: uncomment the <ins> unit and remove the placeholder <span>. -->
+  <div class="ad-slot ad-bottom"><span>Ad space</span>
+    <!--
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
 
   <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
 
@@ -104,7 +124,7 @@
   </div>
 
   <footer class="footer">
-    <p>Made with ♥ &middot; <a href="#" id="footerHelp">How to play</a> &middot; A new word daily</p>
+    <p>Made with ♥ &middot; <a href="#" id="footerHelp">How to play</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a></p>
   </footer>
 
   <script src="words.js"></script>

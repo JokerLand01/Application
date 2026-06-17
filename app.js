@@ -158,8 +158,14 @@
     if (/^[A-Z]$/.test(key) && current.length < COLS) {
       current += key;
       renderCurrent();
+      // First-time nudge: when a brand-new player fills the row, tell them to submit.
+      if (current.length === COLS && stats.played === 0 && state.guesses.length === 0 && !hintShown) {
+        hintShown = true;
+        toast("Press ENTER ↵ to submit your guess", 2500);
+      }
     }
   }
+  let hintShown = false;
 
   function renderCurrent() {
     const r = activeRowIndex();
