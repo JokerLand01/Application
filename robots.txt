@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Google AdSense crawlers (needed to serve relevant ads)
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
 Sitemap: https://streakle.bytewise.live/sitemap.xml

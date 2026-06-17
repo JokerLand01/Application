@@ -27,6 +27,45 @@
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4400023475704778" crossorigin="anonymous"></script>
+
+  <!-- Structured data: helps Google understand the site = richer search listings -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://streakle.bytewise.live/#website",
+        "url": "https://streakle.bytewise.live/",
+        "name": "Streakle",
+        "description": "A free daily five-letter word puzzle. Guess the word in six tries and build your streak.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://streakle.bytewise.live/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://streakle.bytewise.live/#org",
+        "name": "Streakle",
+        "url": "https://streakle.bytewise.live/",
+        "logo": "https://streakle.bytewise.live/assets/icon.svg"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Streakle",
+        "url": "https://streakle.bytewise.live/",
+        "description": "Streakle is a free daily word puzzle. One new five-letter word every day — guess it in six tries, build your streak, and share your score.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any (modern web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "image": "https://streakle.bytewise.live/assets/og-image.png",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://streakle.bytewise.live/#org" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -118,7 +157,7 @@
   </div>
 
   <footer class="footer">
-    <p>Made with ♥ &middot; <a href="#" id="footerHelp">How to play</a> &middot; <a href="strategy.html">Tips &amp; Strategy</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a></p>
+    <p>Made with ♥ &middot; <a href="#" id="footerHelp">How to play</a> &middot; <a href="how-to-play.html">Rules</a> &middot; <a href="strategy.html">Strategy</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a></p>
   </footer>
 
   <script src="words.js"></script>
