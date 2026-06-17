@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://game.bytewise.live/sitemap.xml
+Sitemap: https://streakle.bytewise.live/sitemap.xml
